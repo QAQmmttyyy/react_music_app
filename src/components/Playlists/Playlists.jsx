@@ -146,7 +146,7 @@ class Playlists extends React.Component {
       );
     });
     //  quanbu gedan
-    const allPlContent = playlists.map((playlist) => {
+    const allPlContent = playlists && playlists.map((playlist) => {
       const {
         id,
         coverUrl,

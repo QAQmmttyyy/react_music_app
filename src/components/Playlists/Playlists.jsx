@@ -98,7 +98,7 @@ class Playlists extends React.Component {
     }/api_mock_data/playlists/all/p${pageIndex}.json`;
 
     window.fetch(plsUrl).then(
-      response => response.statusText === 'OK' ? response.json() : ''
+      response => response.status === 200 ? response.json() : ''
     ).then(
       data => {
         this.setState({ playlists: data });

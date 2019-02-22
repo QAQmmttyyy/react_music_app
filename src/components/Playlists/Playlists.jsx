@@ -85,11 +85,11 @@ class Playlists extends React.Component {
     };
     this.getPlaylists = this.getPlaylists.bind(this);
     // this.diffPage = false;
-    this.curPage = 1;
+    this.curPage = 0;
   }
 
   componentDidMount() {
-    window.setTimeout(() => {this.getPlaylists(this.curPage - 1);}, 100);
+    this.getPlaylists(this.curPage);
   }
 
   getPlaylists(pageIndex) {

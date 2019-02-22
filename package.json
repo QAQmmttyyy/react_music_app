@@ -2,9 +2,11 @@
   "name": "music-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://qaqmmttyyy.github.io/react_music_app",
   "dependencies": {
     "antd-mobile": "^2.2.8",
     "better-scroll": "^1.14.1",
+    "gh-pages": "^2.0.1",
     "less": "^3.9.0",
     "lodash": "^4.17.11",
     "rc-queue-anim": "^1.6.10",
@@ -15,6 +17,8 @@
     "react-transition-group": "^2.5.3"
   },
   "scripts": {
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test"

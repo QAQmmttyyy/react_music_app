@@ -1,0 +1,38 @@
+{
+  "name": "music-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd-mobile": "^2.2.8",
+    "better-scroll": "^1.14.1",
+    "less": "^3.9.0",
+    "lodash": "^4.17.11",
+    "rc-queue-anim": "^1.6.10",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-router-dom": "^4.3.1",
+    "react-sticky": "^6.0.3",
+    "react-transition-group": "^2.5.3"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "babel-plugin-import": "^1.11.0",
+    "customize-cra": "^0.2.11",
+    "less-loader": "^4.1.0",
+    "react-app-rewired": "^2.0.3",
+    "react-scripts": "2.1.3"
+  }
+}

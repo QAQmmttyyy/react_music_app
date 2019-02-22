@@ -1,0 +1,129 @@
+.my-search {
+  // height: 44px;
+  
+  .am-search {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: #f8f8f8;
+  }
+
+  .am-search-cancel {
+    color: #333;
+  }
+
+  .search-box {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 85;
+    background-color: #fff;
+  }
+  .search-keyword-box,
+  .search-result-box,
+  .search-loading-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 85;
+    background-color: #fff;
+  }
+
+  .search-keyword-box {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    .hot-keyword,
+    .history-keyword {
+      padding-top: 20px;
+      margin: 0 10px;
+
+      .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .delete-btn {
+        display: block;
+        width: 16px;
+        height: 16px;
+        padding-left: 16px;
+        background-size: auto 16px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-image: url(../../images/delete2.png);
+      }
+      .item {
+        display: inline-block;
+        padding: 2px 14px;
+        margin: 0 10px 10px 0;
+        border-radius: 20px;
+        background: #eee;
+        font-size: 14px;
+        color: #333;
+        line-height: 2;
+      }
+    }
+  }
+
+  .search-result-box {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    .result-list-item {
+      padding-left: 6px;
+    
+      .am-list-line-multiple {
+        padding: 12px 12px 12px 0;
+      }
+    
+      .am-list-line {
+        .am-list-content {
+          font-size: 14px;
+          line-height: 1;
+        }
+      
+        .am-list-brief {
+          margin-top: 4px;
+          color: #666;
+          font-size: 12px;
+          line-height: 14px;
+        }
+      }
+      // .am-list-thumb:first-child {
+      //   margin-right: 6px;
+      // }
+      // img {
+      //   width: 42px;
+      //   height: 42px;
+      // }
+    }
+  }
+
+  // transition
+  .fade {
+    // opacity: 0;
+    transition: all 150ms cubic-bezier(0, 0.84, 0.36, 1);
+  
+    &-entering {
+      opacity: 0;
+    }
+    &-entered {
+      opacity: 1;
+    }
+    &-exiting {
+      opacity: 0;
+    }
+    &-exited {
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "playlists": [
+    {
+      "id": 2478923551,
+      "coverUrl": "http://p2.music.126.net/1UEVBTkbZwh8F0sNQIQ9bQ==/109951163617263720.jpg",
+      "name": "2018全球百大DJ排行榜",
+      "link": "/playlist?id=2478923551",
+      "playCount": "137万",
+      "author": {
+        "name": "welphenEDM",
+        "homeLink": "/user/home?id=55535424"
+      }
+    },
+    {
+      "id": 2474537199,
+      "coverUrl": "http://p2.music.126.net/OrXO5yyb3SHJyZWNfCnbfw==/109951163676024440.jpg",
+      "name": "\"若是心怀旧梦 就别再无疾而终\"",
+      "link": "/playlist?id=2474537199",
+      "playCount": "746万",
+      "author": {
+        "name": "与你赴海",
+        "homeLink": "/user/home?id=269162413"
+      }
+    },
+    {
+      "id": 2411342680,
+      "coverUrl": "http://p2.music.126.net/GbTxaDrpTyVHq8fdEresDQ==/109951163684344567.jpg",
+      "name": "“ 近朱者赤 近你者甜❤ ”",
+      "link": "/playlist?id=2411342680",
+      "playCount": "108万",
+      "author": {
+        "name": "手摇织梦机",
+        "homeLink": "/user/home?id=504044769"
+      }
+    },
+    {
+      "id": 2353275887,
+      "coverUrl": "http://p2.music.126.net/yv1wu7EEUF7eAK0q3tnkpA==/109951163748662953.jpg",
+      "name": "精选丨林宥嘉 薛之谦 徐秉龙 毛不易 李荣浩",
+      "link": "/playlist?id=2353275887",
+      "playCount": "266万",
+      "author": {
+        "name": "岀海",
+        "homeLink": "/user/home?id=510969047"
+      }
+    },
+    {
+      "id": 2523798161,
+      "coverUrl": "http://p2.music.126.net/W2_nKm2SvDk30Ts4mXI_UQ==/109951163680562756.jpg",
+      "name": "心怀世界 · 摇滚人生的博爱情怀",
+      "link": "/playlist?id=2523798161",
+      "playCount": "101万",
+      "author": {
+        "name": "xept",
+        "homeLink": "/user/home?id=74029445"
+      }
+    },
+    {
+      "id": 2495677303,
+      "coverUrl": "http://p2.music.126.net/xlw3UV3rnbcZ9MOAWpsvbQ==/109951163700105592.jpg",
+      "name": "即刻电音 || 参赛作品合集⭐",
+      "link": "/playlist?id=2495677303",
+      "playCount": "140万",
+      "author": {
+        "name": "叶梦落sehun",
+        "homeLink": "/user/home?id=326529494"
+      }
+    },
+    {
+      "id": 2283564964,
+      "coverUrl": "http://p2.music.126.net/AqUHA2qnFUlyHw3iHdEY8Q==/109951163515900261.jpg",
+      "name": "『睡眠丧歌』希望低落会让你快乐",
+      "link": "/playlist?id=2283564964",
+      "playCount": "1734万",
+      "author": {
+        "name": "恩七不甜",
+        "homeLink": "/user/home?id=387207005"
+      }
+    },
+    {
+      "id": 2355200146,
+      "coverUrl": "http://p2.music.126.net/Julhpz7H-ryWTgzf6MTuww==/109951163450031171.jpg",
+      "name": "丧 感 女 声",
+      "link": "/playlist?id=2355200146",
+      "playCount": "145万",
+      "author": {
+        "name": "食人奶奶-",
+        "homeLink": "/user/home?id=365841502"
+      }
+    },
+    {
+      "id": 2570874655,
+      "coverUrl": "http://p1.music.126.net/thP2GtVyrweSNHl1ZIbrVg==/109951163745510805.jpg",
+      "name": "〖2018小语种〗个人30种语言最佳单曲系列",
+      "link": "/playlist?id=2570874655",
+      "playCount": "57240",
+      "author": {
+        "name": "i看美剧",
+        "homeLink": "/user/home?id=267056613"
+      }
+    },
+    {
+      "id": 2496669932,
+      "coverUrl": "http://p2.music.126.net/TNDbI6q6-00mE1DhZr924w==/109951163669568723.jpg",
+      "name": "【女声控】天籁之音，声线美到窒息「合集」",
+      "link": "/playlist?id=2496669932",
+      "playCount": "75万",
+      "author": {
+        "name": "桔橘不甜",
+        "homeLink": "/user/home?id=39971968"
+      }
+    }
+  ],
+  "albums": [
+    {
+      "id": 75198567,
+      "coverUrl": "https://p1.music.126.net/wqNliRRmGSU6aNorHkO3EQ==/109951163796588815.jpg",
+      "title": "LOCA",
+      "link": "/album?id=75198567",
+      "artists": [{
+        "name": "FAVORITE",
+        "link": "/artist?id=12492442"
+      }]
+    }, {
+      "id": 75186989,
+      "coverUrl": "https://p1.music.126.net/k19x40qiBUs3NVWbkA6KuA==/109951163794574408.jpg",
+      "title": "Ghost",
+      "link": "/album?id=75186989",
+      "artists": [{
+        "name": "MKJ",
+        "link": "/artist?id=469200"
+      }]
+    }, {
+      "id": 75198904,
+      "coverUrl": "https://p1.music.126.net/LynFcwiaoas0HcuDJtQwgg==/109951163796563187.jpg",
+      "title": "Unexpectedly",
+      "link": "/album?id=75198904",
+      "artists": [{
+        "name": "SCHAT10",
+        "link": "/artist?id=27862320"
+      }]
+    }, {
+      "id": 75198386,
+      "coverUrl": "https://p1.music.126.net/7qvsAcWXKTFxjfooCvjoAQ==/109951163796512098.jpg",
+      "title": "The Legacy 04",
+      "link": "/album?id=75198386",
+      "artists": [{
+        "name": "015B",
+        "link": "/artist?id=128188"
+      }]
+    }, {
+      "id": 75136830,
+      "coverUrl": "https://p1.music.126.net/X7-TCd229Z9qYNNlto_kew==/109951163796456381.jpg",
+      "title": "FAKER",
+      "link": "/album?id=75136830",
+      "artists": [{
+        "name": "루커스(LU:KUS)",
+        "link": "/artist?id=961056"
+      }]
+    }, {
+      "id": 75195693,
+      "coverUrl": "https://p1.music.126.net/CcGtIZGrmBFdoTRtFKCa2w==/109951163796348366.jpg",
+      "title": "月亮",
+      "link": "/album?id=75195693",
+      "artists": [{
+        "name": "Hickey 喜祺",
+        "link": "/artist?id=29497572"
+      }]
+    }, {
+      "id": 75192335,
+      "coverUrl": "https://p1.music.126.net/junxOHbDDBUrO9G7P8GLQQ==/109951163795987343.jpg",
+      "title": "恋人募集中(仮)",
+      "link": "/album?id=75192335",
+      "artists": [{
+        "name": "天月-あまつき-",
+        "link": "/artist?id=13892"
+      }]
+    }, {
+      "id": 75192598,
+      "coverUrl": "https://p1.music.126.net/gMW0BWsq7yxTnItAS871Xg==/109951163796066470.jpg",
+      "title": "안녕 그래 너",
+      "link": "/album?id=75192598",
+      "artists": [{
+        "name": "차혁",
+        "link": "/artist?id=13056484"
+      }]
+    }, {
+      "id": 75186486,
+      "coverUrl": "https://p1.music.126.net/AxlP2akvkTXZmylMFCXxxw==/109951163794619828.jpg",
+      "title": "歌 时代II",
+      "link": "/album?id=75186486",
+      "artists": [{
+        "name": "张信哲",
+        "link": "/artist?id=6454"
+      }]
+    }, {
+      "id": 75149552,
+      "coverUrl": "https://p1.music.126.net/qhKUx6ROPe2Gz5LcaRixxQ==/109951163788118062.jpg",
+      "title": "Don't Fence Me In",
+      "link": "/album?id=75149552",
+      "artists": [{
+        "name": "Labrinth",
+        "link": "/artist?id=38644"
+      }]
+    }
+  ]
+}

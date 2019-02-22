@@ -1,0 +1,300 @@
+{
+  "id": 74794175,
+  "coverUrl": "http://p2.music.126.net/7HMLffhWQAhNn0-Obd1mSA==/109951163723699299.jpg",
+  "title": "LOVE SHOT - The 5th Album Repackage",
+  "subTitle": null,
+  "artists": [{
+    "name": "EXO",
+    "link": "/artist?id=759509"
+  }],
+  "publishTime": "2018-12-13",
+  "publisher": "SM ENTERTAINMENT",
+  "songNum": 15,
+  "cmtNum": 135,
+  "songlist": [{
+    "id": 1332662879,
+    "link": "/song?id=1332662879",
+    "name": "Love Shot",
+    "duration": "03:20",
+    "artists": [{
+      "name": "EXO",
+      "link": "/artist?id=759509"
+    }],
+    "album": {
+      "name": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175",
+      "picUrl": "http://p2.music.126.net/7HMLffhWQAhNn0-Obd1mSA==/109951163723699299.jpg"
+    },
+    "source": {
+      "title": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175"
+    },
+    "cmtNum": 0
+  }, {
+    "id": 1332662880,
+    "link": "/song?id=1332662880",
+    "name": "Tempo",
+    "duration": "03:44",
+    "artists": [{
+      "name": "EXO",
+      "link": "/artist?id=759509"
+    }],
+    "album": {
+      "name": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175",
+      "picUrl": "http://p2.music.126.net/7HMLffhWQAhNn0-Obd1mSA==/109951163723699299.jpg"
+    },
+    "source": {
+      "title": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175"
+    },
+    "cmtNum": 0
+  }, {
+    "id": 1332662881,
+    "link": "/song?id=1332662881",
+    "name": "트라우마 (Trauma)",
+    "duration": "03:42",
+    "artists": [{
+      "name": "EXO",
+      "link": "/artist?id=759509"
+    }],
+    "album": {
+      "name": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175",
+      "picUrl": "http://p2.music.126.net/7HMLffhWQAhNn0-Obd1mSA==/109951163723699299.jpg"
+    },
+    "source": {
+      "title": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175"
+    },
+    "cmtNum": 0
+  }, {
+    "id": 1332662882,
+    "link": "/song?id=1332662882",
+    "name": "Wait",
+    "duration": "04:08",
+    "artists": [{
+      "name": "EXO",
+      "link": "/artist?id=759509"
+    }],
+    "album": {
+      "name": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175",
+      "picUrl": "http://p2.music.126.net/7HMLffhWQAhNn0-Obd1mSA==/109951163723699299.jpg"
+    },
+    "source": {
+      "title": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175"
+    },
+    "cmtNum": 0
+  }, {
+    "id": 1332662883,
+    "link": "/song?id=1332662883",
+    "name": "Sign",
+    "duration": "03:13",
+    "artists": [{
+      "name": "EXO",
+      "link": "/artist?id=759509"
+    }],
+    "album": {
+      "name": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175",
+      "picUrl": "http://p2.music.126.net/7HMLffhWQAhNn0-Obd1mSA==/109951163723699299.jpg"
+    },
+    "source": {
+      "title": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175"
+    },
+    "cmtNum": 0
+  }, {
+    "id": 1332662884,
+    "link": "/song?id=1332662884",
+    "name": "닿은 순간 (Ooh La La La)",
+    "duration": "03:07",
+    "artists": [{
+      "name": "EXO",
+      "link": "/artist?id=759509"
+    }],
+    "album": {
+      "name": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175",
+      "picUrl": "http://p2.music.126.net/7HMLffhWQAhNn0-Obd1mSA==/109951163723699299.jpg"
+    },
+    "source": {
+      "title": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175"
+    },
+    "cmtNum": 0
+  }, {
+    "id": 1332662885,
+    "link": "/song?id=1332662885",
+    "name": "Gravity",
+    "duration": "03:54",
+    "artists": [{
+      "name": "EXO",
+      "link": "/artist?id=759509"
+    }],
+    "album": {
+      "name": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175",
+      "picUrl": "http://p2.music.126.net/7HMLffhWQAhNn0-Obd1mSA==/109951163723699299.jpg"
+    },
+    "source": {
+      "title": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175"
+    },
+    "cmtNum": 0
+  }, {
+    "id": 1332662886,
+    "link": "/song?id=1332662886",
+    "name": "가끔 (With You)",
+    "duration": "03:08",
+    "artists": [{
+      "name": "EXO",
+      "link": "/artist?id=759509"
+    }],
+    "album": {
+      "name": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175",
+      "picUrl": "http://p2.music.126.net/7HMLffhWQAhNn0-Obd1mSA==/109951163723699299.jpg"
+    },
+    "source": {
+      "title": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175"
+    },
+    "cmtNum": 0
+  }, {
+    "id": 1332662887,
+    "link": "/song?id=1332662887",
+    "name": "24/7",
+    "duration": "04:03",
+    "artists": [{
+      "name": "EXO",
+      "link": "/artist?id=759509"
+    }],
+    "album": {
+      "name": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175",
+      "picUrl": "http://p2.music.126.net/7HMLffhWQAhNn0-Obd1mSA==/109951163723699299.jpg"
+    },
+    "source": {
+      "title": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175"
+    },
+    "cmtNum": 0
+  }, {
+    "id": 1332662888,
+    "link": "/song?id=1332662888",
+    "name": "후폭풍 (Bad Dream)",
+    "duration": "03:56",
+    "artists": [{
+      "name": "EXO",
+      "link": "/artist?id=759509"
+    }],
+    "album": {
+      "name": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175",
+      "picUrl": "http://p2.music.126.net/7HMLffhWQAhNn0-Obd1mSA==/109951163723699299.jpg"
+    },
+    "source": {
+      "title": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175"
+    },
+    "cmtNum": 0
+  }, {
+    "id": 1332662889,
+    "link": "/song?id=1332662889",
+    "name": "Damage",
+    "duration": "03:29",
+    "artists": [{
+      "name": "EXO",
+      "link": "/artist?id=759509"
+    }],
+    "album": {
+      "name": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175",
+      "picUrl": "http://p2.music.126.net/7HMLffhWQAhNn0-Obd1mSA==/109951163723699299.jpg"
+    },
+    "source": {
+      "title": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175"
+    },
+    "cmtNum": 0
+  }, {
+    "id": 1332662890,
+    "link": "/song?id=1332662890",
+    "name": "여기 있을게 (Smile On My Face)",
+    "duration": "03:38",
+    "artists": [{
+      "name": "EXO",
+      "link": "/artist?id=759509"
+    }],
+    "album": {
+      "name": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175",
+      "picUrl": "http://p2.music.126.net/7HMLffhWQAhNn0-Obd1mSA==/109951163723699299.jpg"
+    },
+    "source": {
+      "title": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175"
+    },
+    "cmtNum": 0
+  }, {
+    "id": 1332662891,
+    "link": "/song?id=1332662891",
+    "name": "오아시스 (Oasis)",
+    "duration": "03:14",
+    "artists": [{
+      "name": "EXO",
+      "link": "/artist?id=759509"
+    }],
+    "album": {
+      "name": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175",
+      "picUrl": "http://p2.music.126.net/7HMLffhWQAhNn0-Obd1mSA==/109951163723699299.jpg"
+    },
+    "source": {
+      "title": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175"
+    },
+    "cmtNum": 0
+  }, {
+    "id": 1332662892,
+    "link": "/song?id=1332662892",
+    "name": "宣告 (Love Shot)",
+    "duration": "03:20",
+    "artists": [{
+      "name": "EXO",
+      "link": "/artist?id=759509"
+    }],
+    "album": {
+      "name": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175",
+      "picUrl": "http://p2.music.126.net/7HMLffhWQAhNn0-Obd1mSA==/109951163723699299.jpg"
+    },
+    "source": {
+      "title": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175"
+    },
+    "cmtNum": 0
+  }, {
+    "id": 1332662893,
+    "link": "/song?id=1332662893",
+    "name": "節奏 (Tempo)",
+    "duration": "03:44",
+    "artists": [{
+      "name": "EXO",
+      "link": "/artist?id=759509"
+    }],
+    "album": {
+      "name": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175",
+      "picUrl": "http://p2.music.126.net/7HMLffhWQAhNn0-Obd1mSA==/109951163723699299.jpg"
+    },
+    "source": {
+      "title": "LOVE SHOT - The 5th Album Repackage",
+      "link": "/album?id=74794175"
+    },
+    "cmtNum": 0
+  }]
+}

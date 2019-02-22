@@ -1,0 +1,91 @@
+{
+  "id": 75136830,
+  "coverUrl": "http://p1.music.126.net/X7-TCd229Z9qYNNlto_kew==/109951163796456381.jpg",
+  "title": "FAKER",
+  "subTitle": null,
+  "artists": [{
+    "name": "LU:KUS",
+    "link": "/artist?id=961056"
+  }],
+  "publishTime": "2019-01-15",
+  "publisher": "Genie Music",
+  "songNum": 4,
+  "cmtNum": 3,
+  "songlist": [{
+    "id": 1339725796,
+    "link": "/song?id=1339725796",
+    "name": "FAKER",
+    "duration": "03:37",
+    "artists": [{
+      "name": "LU:KUS",
+      "link": "/artist?id=961056"
+    }],
+    "album": {
+      "name": "FAKER",
+      "link": "/album?id=75136830",
+      "picUrl": "http://p1.music.126.net/X7-TCd229Z9qYNNlto_kew==/109951163796456381.jpg"
+    },
+    "source": {
+      "title": "FAKER",
+      "link": "/album?id=75136830"
+    },
+    "cmtNum": 0
+  }, {
+    "id": 1339725797,
+    "link": "/song?id=1339725797",
+    "name": "향기로와 (New Ver.) - (So Sweet (New Ver.))",
+    "duration": "02:58",
+    "artists": [{
+      "name": "LU:KUS",
+      "link": "/artist?id=961056"
+    }],
+    "album": {
+      "name": "FAKER",
+      "link": "/album?id=75136830",
+      "picUrl": "http://p1.music.126.net/X7-TCd229Z9qYNNlto_kew==/109951163796456381.jpg"
+    },
+    "source": {
+      "title": "FAKER",
+      "link": "/album?id=75136830"
+    },
+    "cmtNum": 0
+  }, {
+    "id": 1339725798,
+    "link": "/song?id=1339725798",
+    "name": "남.사.못 (남자는 사랑을 못잊는다) (New Ver.) - (Nam.Sa.Mot (New Ver.))",
+    "duration": "03:19",
+    "artists": [{
+      "name": "LU:KUS",
+      "link": "/artist?id=961056"
+    }],
+    "album": {
+      "name": "FAKER",
+      "link": "/album?id=75136830",
+      "picUrl": "http://p1.music.126.net/X7-TCd229Z9qYNNlto_kew==/109951163796456381.jpg"
+    },
+    "source": {
+      "title": "FAKER",
+      "link": "/album?id=75136830"
+    },
+    "cmtNum": 0
+  }, {
+    "id": 1339725799,
+    "link": "/song?id=1339725799",
+    "name": "FAKER (Inst.)",
+    "duration": "03:37",
+    "artists": [{
+      "name": "LU:KUS",
+      "link": "/artist?id=961056"
+    }],
+    "album": {
+      "name": "FAKER",
+      "link": "/album?id=75136830",
+      "picUrl": "http://p1.music.126.net/X7-TCd229Z9qYNNlto_kew==/109951163796456381.jpg"
+    },
+    "source": {
+      "title": "FAKER",
+      "link": "/album?id=75136830"
+    },
+    "cmtNum": 0
+  }]
+}

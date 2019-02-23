@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import l_array from 'lodash/array';
 
 import PlayerContext from './context/PlayerContext';
@@ -246,10 +246,10 @@ class App extends React.Component {
             addSongToNext: this.addSongToNext,
           }}
         >
-          {/* <Switch> */}
+          <Switch>
             <Route exact path="/" component={Playlists}/>
-            <Route path="/:playlist" component={PlaylistDetail}/>
-          {/* </Switch> */}
+            <Route path="/playlist" component={PlaylistDetail}/>
+          </Switch>
 
           <Player />
           

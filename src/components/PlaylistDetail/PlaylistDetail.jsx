@@ -84,7 +84,7 @@ class PlaylistDetail extends React.Component {
   }
 
   render() {
-    const { match,location, history } = this.props
+    const { match, location, history } = this.props
     console.log(location);
     console.log(match);
     this.plID = location.search.split('=')[1];
@@ -115,9 +115,7 @@ class PlaylistDetail extends React.Component {
                 album,
               } = song;
       
-              let artistsTitle = artists.map(
-                artist => artist.name
-              ).join('/');
+              let artistsTitle = artists.map(artist => artist.name).join('/');
       
               return (
                 <Item 
@@ -163,7 +161,7 @@ class PlaylistDetail extends React.Component {
                     {/* info sec 可抽出为容器组件 */}
                     <section className="my-plinfo-wrap">
                       <PlaylistCover
-                        src={`${coverUrl}?param=512y512`}
+                        src={`${coverUrl}?param=336y336`}
                         style={{
                           width: '1.12rem',
                           height: '1.12rem',

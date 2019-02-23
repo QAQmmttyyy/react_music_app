@@ -124,7 +124,7 @@ class Playlists extends React.Component {
         <Link key={id} className="pl-li" to={link}>
           <div className="cover-wrapper">
             <PlaylistCover
-              src={`${coverUrl}?param=512y512`}
+              src={`${coverUrl}?param=400y400`}
               style={{
                 position: 'absolute',
                 top: 0,
@@ -151,7 +151,7 @@ class Playlists extends React.Component {
       return (
         <Item
           key={id}
-          thumb={`${coverUrl}?param=512y512`}
+          thumb={`${coverUrl}?param=200y200`}
           onClick={() => history.push(link)}
           multipleLine
         >

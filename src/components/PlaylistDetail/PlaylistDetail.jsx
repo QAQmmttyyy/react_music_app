@@ -84,8 +84,9 @@ class PlaylistDetail extends React.Component {
   }
 
   render() {
-    const { location, history } = this.props
+    const { match,location, history } = this.props
     console.log(location);
+    console.log(match);
     this.plID = location.search.split('=')[1];
 
     if (this.state.plDetail.hasOwnProperty('id')) {

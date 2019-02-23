@@ -248,7 +248,7 @@ class App extends React.Component {
         >
           <Switch>
             <Route exact path="/" component={Playlists}/>
-            <Route path="/playlist" component={PlaylistDetail}/>
+            <Route path="/:playlist" component={PlaylistDetail}/>
           </Switch>
 
           <Player />

@@ -246,10 +246,10 @@ class App extends React.Component {
             addSongToNext: this.addSongToNext,
           }}
         >
-          <Switch>
+          {/* <Switch> */}
             <Route exact path="/" component={Playlists}/>
             <Route path="/:playlist" component={PlaylistDetail}/>
-          </Switch>
+          {/* </Switch> */}
 
           <Player />
           

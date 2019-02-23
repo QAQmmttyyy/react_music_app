@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import l_array from 'lodash/array';
 
 import PlayerContext from './context/PlayerContext';
@@ -232,7 +232,7 @@ class App extends React.Component {
   // render
   render() {
     return (
-      <Router>
+      
         <PlayerContext.Provider 
           value={{
             playerState: this.state,
@@ -254,7 +254,7 @@ class App extends React.Component {
           <Player />
           
         </PlayerContext.Provider>
-      </Router>
+      
     );
   }
 }

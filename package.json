@@ -2,7 +2,7 @@
   "name": "music-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://qaqmmttyyy.github.io",
+  "homepage": "https://qaqmmttyyy.github.io/react_music_app/",
   "dependencies": {
     "antd-mobile": "^2.2.8",
     "better-scroll": "^1.14.1",

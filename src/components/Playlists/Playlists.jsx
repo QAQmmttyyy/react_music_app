@@ -83,8 +83,6 @@ class Playlists extends React.Component {
       ],
       playlists: [],
     };
-    this.getPlaylists = this.getPlaylists.bind(this);
-    // this.diffPage = false;
     this.curPage = 0;
   }
 
@@ -92,7 +90,7 @@ class Playlists extends React.Component {
     this.getPlaylists(this.curPage);
   }
 
-  getPlaylists(pageIndex) {
+  getPlaylists = (pageIndex) => {
     const plsUrl = `${
       process.env.PUBLIC_URL
     }/api_mock_data/playlists/all/p${pageIndex}.json`;
@@ -109,7 +107,7 @@ class Playlists extends React.Component {
   }
 
   render() {
-    const { location, history } = this.props;
+    const { history } = this.props;
     const { rcmdPlaylists, playlists } =this.state;
 
     // tuijian gedan
@@ -122,17 +120,11 @@ class Playlists extends React.Component {
         playCount,
       } = playlist;
 
-      // const plPath = link.split('?')[0];
-
       return (
-        <Link 
-          key={id}
-          className="pl-li"
-          to={link}
-        >
+        <Link key={id} className="pl-li" to={link}>
           <div className="cover-wrapper">
             <PlaylistCover
-              src={`${coverUrl}?param=250y250`}
+              src={`${coverUrl}?param=512y512`}
               style={{
                 position: 'absolute',
                 top: 0,

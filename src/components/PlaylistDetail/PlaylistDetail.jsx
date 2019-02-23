@@ -27,7 +27,6 @@ class PlaylistDetail extends React.Component {
 
   componentDidMount() {
     this.initScroll();
-    // window.setTimeout(this.getPldData, 100);
     this.getPldData();
   }
 
@@ -86,6 +85,7 @@ class PlaylistDetail extends React.Component {
 
   render() {
     const { location, history } = this.props
+    console.log(location);
     this.plID = location.search.split('=')[1];
 
     if (this.state.plDetail.hasOwnProperty('id')) {

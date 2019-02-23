@@ -6,7 +6,7 @@ import App from './App.jsx';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <BrowserRouter basename="/react_music_app">
+  <BrowserRouter>
     <App />
   </BrowserRouter>,
   document.getElementById('root')

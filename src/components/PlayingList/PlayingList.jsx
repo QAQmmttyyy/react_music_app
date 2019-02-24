@@ -8,6 +8,11 @@ import './PlayingList.less';
 const Item = List.Item;
 
 class PlayingList extends React.Component {
+
+  componentDidMount() {
+    window.document.querySelector('.playing-list .active-song').scrollIntoView();
+  }
+  
   render() {
     const { transitionClass, togglePlayingList } = this.props;
     

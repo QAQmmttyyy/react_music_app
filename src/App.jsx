@@ -1,10 +1,8 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
 import l_array from 'lodash/array';
 
 import PlayerContext from './context/PlayerContext';
-import PlaylistDetail from './components/PlaylistDetail/PlaylistDetail.jsx';
-import Playlists from './components/Playlists/Playlists.jsx';
+import Home from './components/Home/Home.jsx';
 import Player from './components/Player/Player.jsx';
 
 class App extends React.Component {
@@ -246,11 +244,7 @@ class App extends React.Component {
             addSongToNext: this.addSongToNext,
           }}
         >
-          <Switch>
-            <Route path="/playlist" component={PlaylistDetail}/>
-            <Route component={Playlists}/>
-          </Switch>
-
+          <Home />
           <Player />
           
         </PlayerContext.Provider>

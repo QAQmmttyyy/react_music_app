@@ -20,20 +20,6 @@ class MiniPlayer extends Component {
       toggleFullplayer,
       togglePlayingList,
     } = this.props;
-    // test
-    // curSong = {
-    //   "id": 437608773,
-    //   "name": "无法长大",
-    //   "artists": [{
-    //     "name": "赵雷",
-    //     "link": "/artist?id=6731"
-    //   }],
-    //   "album": {
-    //     "name": "无法长大",
-    //     "link": "/album?id=34943558",
-    //     "picUrl": "http://p1.music.126.net/zy9EZ2dcsofYlVAn-nb-wA==/3412884129074161.jpg"
-    //   },
-    // };
 
     // play plp btns
     const extraContent = (

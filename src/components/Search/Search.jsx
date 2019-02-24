@@ -56,7 +56,7 @@ class Search extends Component {
       // console.log(cpHistoryKws);
   
       // req, url encode?
-      const searchApi = `https://api.mlwei.com/music/api/wy/?key=523077333&id=${value}&type=so&cache=0&nu=60`;
+      const searchApi = `https://api.mlwei.com/music/api/wy/?key=523077333&id=${value}&type=so&cache=1&nu=60`;
       
       const encoded = encodeURI(searchApi);
       // console.log(encoded);

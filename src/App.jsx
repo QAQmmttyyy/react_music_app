@@ -28,6 +28,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    // console.log('app mount');
     const localData = window.localStorage.getItem('playData');
     this.setState(JSON.parse(localData));
   }
@@ -115,7 +116,7 @@ class App extends React.Component {
 
       // 歌单间重复的歌曲也被去重了
       const songToAdd = l_array.differenceBy(songlist, playingList, 'id');
-      console.log(songToAdd);
+      // console.log(songToAdd);
 
       if (songToAdd.length) {
         // 这一行直接以非 setState 的方式对 this.state 做了修改
@@ -168,7 +169,7 @@ class App extends React.Component {
       } else {// 没有这首歌
         // 添加到正播放的歌的后面
         playingList.splice(indexToInsert, 0, song);
-        console.log(playingList);
+        // console.log(playingList);
         // 更新 ui
         this.setState({ playingList: playingList }, () => this.play(indexToInsert));
       }
@@ -229,6 +230,7 @@ class App extends React.Component {
   }
   // render
   render() {
+    // console.log('app render');
     return (
       
         <PlayerContext.Provider 

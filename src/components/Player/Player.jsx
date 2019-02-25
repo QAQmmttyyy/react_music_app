@@ -1,7 +1,7 @@
 import React from 'react';
 import { Transition } from 'react-transition-group';
 
-import l_lang from 'lodash/lang';
+import _ from 'lodash';
 
 import PlayerContext from '../../context/PlayerContext';
 import MiniPlayer from '../MiniPlayer/MiniPlayer.jsx';
@@ -20,7 +20,12 @@ class Player extends React.Component {
       duration: '00:00',
       curTime: '00:00',
       playProgress: '0',
-      curTimestamp: 0, // 歌词相关
+      // 歌词相关
+      // curTimestamp: 0, 
+      lyric: [],
+      timestampArr: [],
+      curLyricIndex: -1,
+      curLyricIndexChange: false,
       isPauseIcon: false,
       // showMiniplayer: false,
       showFullplayer: false,
@@ -30,6 +35,8 @@ class Player extends React.Component {
     this.handleChangeProgress = this.handleChangeProgress.bind(this);
     this.handleAfterChangeProgress = this.handleAfterChangeProgress.bind(this);
 
+    this.songId = 0; // lyric
+    this.diffSong = false; // lyric
     this.curSongIndex = -1;
     this.audioAmount = 0;
     this.isPause = true; // 指示 进行播放还是暂停
@@ -52,8 +59,13 @@ class Player extends React.Component {
     ];
   }
 
+  componentDidMount() {
+    // console.log('player mount');
+    // this.getLyric();
+  }
+
   componentDidUpdate() {
-    console.log('componentDidUpdate');
+    // console.log('player Update');
     if (this.isNoAudio()) {
       return;
     }
@@ -66,11 +78,79 @@ class Player extends React.Component {
         this.playAudio();
       }
     }
+    // lyric
+    // console.log(this.diffSong);
+    if (this.diffSong) {
+      this.getLyric();
+    }
+  }
+
+  getLyric = () => {
+    const lrcUrl = `https://api.mlwei.com/music/api/wy/?key=523077333&cache=1&type=lrc&id=${this.songId}`;
+    console.log(lrcUrl);
+    
+    window.fetch(lrcUrl, {
+      method: 'GET',
+      headers: { 'Accept': '*' },
+      mode: 'cors'
+    }).then(
+      response => {
+        // console.log(response);
+        return response.status === 200 ? response.text() : null;
+      }
+    ).then(
+      data => {
+        if (data) {
+          
+          // console.log(data);
+          const lrcArr = data.split('\n');
+          // state
+          const 
+            lyric = [],
+            timestampArr = [];
+  
+          lrcArr.forEach((lrc) => {
+            const matchPart = lrc.match(/\[(.*)\](.*)/);
+  
+            if (matchPart) {
+              
+              const 
+                timestampParts = matchPart[1].trim().split(':'),
+                part1 = parseInt(timestampParts[0]) * 60,
+                part2 = parseFloat(timestampParts[1]),
+                timestamp = part1 + part2;
+              
+              if (!isNaN(timestamp)) {
+                lyric.push(matchPart[2].trim());
+                timestampArr.push(timestamp);
+              }
+            }
+          });
+  
+          console.log(lyric);
+          // console.log(timestampArr);
+  
+          this.setState({
+            lyric: lyric,
+            timestampArr: timestampArr,
+            curLyricIndex: -1,
+          });
+        }
+      }
+    ).catch(
+      reason => {
+        // console.log(reason);
+        this.setState({
+          lyric: [],
+          timestampArr: [],
+        });
+      }
+    );
   }
 
   playAudio() {
     this.audioRef.current.play().then(() => {
-      console.log('play.then');
+      // console.log('play.then');
       this.setState({ isPauseIcon: true });
     }, (reason) => {
       console.log(reason);
@@ -168,7 +248,7 @@ class Player extends React.Component {
   
   // audio
   handleDurationChange() {
-    console.log('handleDurationChange');
+    // console.log('handleDurationChange');
     this.setState({
       duration: this.timeFormat(this.audioRef.current.duration),
       playProgress: '0',
@@ -178,31 +258,35 @@ class Player extends React.Component {
 
   handleTimeUpdate() {
     const
-      old = this.state.curTime,
-      duration = this.audioRef.current.duration,
-      currentTime = this.audioRef.current.currentTime;
+      { curTime, curLyricIndex, timestampArr } = this.state,
+      { duration, currentTime } = this.audioRef.current;
     
     const
-      curTimeStr = this.timeFormat(currentTime),
-      progress = `${(currentTime / duration * 100).toFixed(2)}%`;
+      nextCurTime = this.timeFormat(currentTime),
+      nextPlayProgress = `${(currentTime / duration * 100).toFixed(2)}%`,
+      nextCurLyricIndex = _.findLastIndex(timestampArr, val => val <= currentTime);
   
-    if (old !== curTimeStr) {
-      this.setState({
-        curTime: curTimeStr,
-        playProgress: progress,
-        curTimestamp: currentTime,
-      });
-    } else {
-
-      if (currentTime === duration) {
-        this.setState({ 
-          playProgress: progress,
-          curTimestamp: currentTime,
+      if (curTime !== nextCurTime) {
+        this.setState({
+          curTime: nextCurTime,
+          playProgress: nextPlayProgress,
+        });
+      } else if (currentTime === duration) {
+        this.setState({
+          playProgress: nextPlayProgress
+        });
+      }
+      // lyric
+      if (curLyricIndex !== nextCurLyricIndex) {
+        this.setState({
+          curLyricIndex: nextCurLyricIndex,
+          curLyricIndexChange: true,
         });
       } else {
-        this.setState({ curTimestamp: currentTime });
+        this.setState({
+          curLyricIndexChange: false,
+        });
       }
-    }
   }
 
   handleEnded(funcPlay) {
@@ -219,7 +303,7 @@ class Player extends React.Component {
     if (audioElem.error.code === 2) {
       audioElem.load();
       audioElem.currentTime = parseFloat(this.state.playProgress) / 100;
-      console.log(this.state.playProgress);
+      // console.log(this.state.playProgress);
     }
   }
 
@@ -263,23 +347,30 @@ class Player extends React.Component {
   }
 
   render() {
+    // console.log('player render');
     const { showFullplayer, showPlayingList } = this.state;
 
     return (
       <PlayerContext.Consumer>
-        {({ playerState, play, pause, deleteSong, clearPlaylist }) => {
+        {({ playerState, play, pause }) => {
           const {
             playingList,
             currentSong,
             curSongIndex,
             isPause,
           } = playerState;
-
+          
+          const curSongId = currentSong.id;
+          {/* console.log(curSongId); */}
+          if (curSongId) {
+            this.diffSong = this.songId !== curSongId;
+            this.songId = curSongId;
+          }
           this.curSongIndex = curSongIndex;
           this.audioAmount = playingList.length;
           this.isPause = isPause;
           this.currentSong = currentSong;
-          this.isToReset = l_lang.isEmpty(currentSong);
+          this.isToReset = _.isEmpty(currentSong);
 
           return (
             <div className="audio-controls-panel">
@@ -330,6 +421,7 @@ class Player extends React.Component {
                     <FullPlayer
                       transitionClass={`slide-up slide-up-${status}`}
                       curSong={currentSong}
+                      diffSong={this.diffSong}
                       playState={this.state}
                       mode={this.playMode[this.state.modeIndex].className}
                       clickPlayPauseHandler={(ev) => this.handleClickPlayPause(ev, play, pause)}

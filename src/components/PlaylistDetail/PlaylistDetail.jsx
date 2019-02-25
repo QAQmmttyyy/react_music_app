@@ -80,7 +80,7 @@ class PlaylistDetail extends React.Component {
           };
         });
       }
-      console.log('resultData',resultData);
+      // console.log('resultData',resultData);
       this.setState({
         songlist: resultData,
         isLoading: false,
@@ -154,7 +154,7 @@ class PlaylistDetail extends React.Component {
             );
           });
 
-          console.log('listContent',!(listContent));
+          {/* console.log('listContent',!(listContent)); */}
 
           return (
             <div className={`PlaylistDetail ${transitionClass}`}>

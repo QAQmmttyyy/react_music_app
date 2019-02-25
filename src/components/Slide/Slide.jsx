@@ -84,7 +84,7 @@ class Slide extends Component {
     this.slideGroupRef.current.style.width = width + 'px'
   }
   _initSlide = () => {
-    console.log(this.props.threshold)
+    // console.log(this.props.threshold)
     this.slide = new BScroll(this.slideRef.current, {
       scrollX: true,
       scrollY: false,

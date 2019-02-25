@@ -121,7 +121,7 @@ class Search extends Component {
 
   focus = () => {
     // show search-keyword-box
-    console.log('focus');
+    // console.log('focus');
     this.setState({
       showSearchBox: true,
       showSearchKeywordBox: true,
@@ -150,7 +150,7 @@ class Search extends Component {
     ev.stopPropagation();
     // this.manualFocusInst.focus();
     const val = ev.target.textContent;
-    console.log(val);
+    // console.log(val);
     if (ev.target.className === 'item') {
       this.setState({ keyword: val });
       this.submit(val);

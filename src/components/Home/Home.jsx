@@ -102,14 +102,14 @@ class Home extends React.Component {
   handleClickPlaylist = (ev) => {
     // ev.stopPropagation();
     const elem = ev.currentTarget;
-    console.log(elem);
+    // console.log(elem);
     // console.log(ev.currentTarget.attributes);
     // console.log(elem.hasAttribute('data-index'));
 
     if (elem.hasAttribute('data-index')) {
 
       const index = elem.getAttribute('data-index');
-      console.log(index);
+      // console.log(index);
       let pl = null;
 
       this.setState(prevState => {

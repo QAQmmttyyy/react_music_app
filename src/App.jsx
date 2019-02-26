@@ -17,7 +17,7 @@ class App extends React.Component {
       isLogin: false
     };
     // bind this to method
-    this.play = this.play.bind(this);
+    this.playByIndex = this.playByIndex.bind(this);
     this.pause = this.pause.bind(this);
     this.deleteSong = this.deleteSong.bind(this);
     this.clearPlaylist = this.clearPlaylist.bind(this);
@@ -38,7 +38,7 @@ class App extends React.Component {
     window.localStorage.setItem('playData',JSON.stringify({ playingList, currentSong, curSongIndex }));
   }
 
-  play(index) {
+  playByIndex(index) {
     if (index >= 0) {
       if (index === this.state.curSongIndex) {
         if (this.state.isPause) {
@@ -106,7 +106,7 @@ class App extends React.Component {
     this.setState({
       playingList: songlist,
       curSongIndex: -1,
-    }, () => this.play(0));
+    }, () => this.playByIndex(0));
   }
 
   addAll(songlist) {
@@ -144,7 +144,7 @@ class App extends React.Component {
         
         if (matchedSongIdx === curSongIndex) {// 且为正在播放的歌
           // 直接播放这首歌
-          this.play(matchedSongIdx);
+          this.playByIndex(matchedSongIdx);
 
         } else if (matchedSongIdx < curSongIndex) {// 在正在播放的歌之前
           // 添加到正播放的歌的后面
@@ -155,7 +155,7 @@ class App extends React.Component {
           this.setState({
             playingList: playingList,
             curSongIndex: curSongIndex - 1,
-          }, () => this.play(indexToInsert - 1));
+          }, () => this.playByIndex(indexToInsert - 1));
 
         } else {// 在正在播放的歌之后
           // 从原位置移除
@@ -163,7 +163,7 @@ class App extends React.Component {
           // 添加到正播放的歌的后面
           playingList.splice(indexToInsert, 0, song);
           // 更新 ui
-          this.setState({ playingList: playingList }, () => this.play(indexToInsert));
+          this.setState({ playingList: playingList }, () => this.playByIndex(indexToInsert));
         }
 
       } else {// 没有这首歌
@@ -171,11 +171,11 @@ class App extends React.Component {
         playingList.splice(indexToInsert, 0, song);
         // console.log(playingList);
         // 更新 ui
-        this.setState({ playingList: playingList }, () => this.play(indexToInsert));
+        this.setState({ playingList: playingList }, () => this.playByIndex(indexToInsert));
       }
 
     } else {// 播放列表为空
-      this.setState({ playingList: [song] }, () => this.play(indexToInsert));
+      this.setState({ playingList: [song] }, () => this.playByIndex(indexToInsert));
     }
   }
   // 下一首播放
@@ -194,7 +194,7 @@ class App extends React.Component {
         
         if (matchedSongIdx === curSongIndex) {// 且为正在播放的歌
           // 直接播放这首歌
-          this.play(matchedSongIdx); 
+          this.playByIndex(matchedSongIdx); 
 
         } else if (matchedSongIdx < curSongIndex) {// 在正在播放的歌之前
           // 添加到正播放的歌的后面
@@ -224,7 +224,7 @@ class App extends React.Component {
       }
 
     } else {// 播放列表为空
-      this.setState({ playingList: [song] }, () => this.play(0));
+      this.setState({ playingList: [song] }, () => this.playByIndex(0));
     }
 
   }
@@ -236,7 +236,7 @@ class App extends React.Component {
         <PlayerContext.Provider 
           value={{
             playerState: this.state,
-            play: this.play,
+            playByIndex: this.playByIndex,
             pause: this.pause,
             deleteSong: this.deleteSong,
             clearPlaylist: this.clearPlaylist,

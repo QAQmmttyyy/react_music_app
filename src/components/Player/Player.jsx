@@ -352,7 +352,7 @@ class Player extends React.Component {
 
     return (
       <PlayerContext.Consumer>
-        {({ playerState, play, pause }) => {
+        {({ playerState, playByIndex, pause }) => {
           const {
             playingList,
             currentSong,
@@ -382,7 +382,7 @@ class Player extends React.Component {
                 }
                 onDurationChange={() => this.handleDurationChange()}
                 onTimeUpdate={() => this.handleTimeUpdate()}
-                onEnded={() => this.handleEnded(play)}
+                onEnded={() => this.handleEnded(playByIndex)}
                 onError={() => this.handleAudioError()}
               >
               </audio>
@@ -401,7 +401,7 @@ class Player extends React.Component {
                       transitionClass={`slide-up slide-up-${status}`}
                       curSong={currentSong}
                       isPauseIcon={this.state.isPauseIcon}
-                      clickPlayPauseHandler={(ev) => this.handleClickPlayPause(ev, play, pause)}
+                      clickPlayPauseHandler={(ev) => this.handleClickPlayPause(ev, playByIndex, pause)}
                       toggleFullplayer={this.toggleFullplayer}
                       togglePlayingList={(ev) => this.togglePlayingList(ev)}
                     />
@@ -424,9 +424,9 @@ class Player extends React.Component {
                       diffSong={this.diffSong}
                       playState={this.state}
                       mode={this.playMode[this.state.modeIndex].className}
-                      clickPlayPauseHandler={(ev) => this.handleClickPlayPause(ev, play, pause)}
-                      clickPrevBtnHandler={() => this.handleClickPrevBtn(play)}
-                      clickNextBtnHandler={() => this.handleClickNextBtn(play)}
+                      clickPlayPauseHandler={(ev) => this.handleClickPlayPause(ev, playByIndex, pause)}
+                      clickPrevBtnHandler={() => this.handleClickPrevBtn(playByIndex)}
+                      clickNextBtnHandler={() => this.handleClickNextBtn(playByIndex)}
                       clickModeBtnHandler={() => this.handleClickModeBtn()}
                       changeProgressHandler={this.handleChangeProgress}
                       afterChangeProgressHandler={this.handleAfterChangeProgress}

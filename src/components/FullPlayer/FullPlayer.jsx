@@ -45,7 +45,7 @@ class FullPlayer extends React.Component {
       }
     }
   }
-  handleTouchStart = (ev) => {
+  handleTouchStart = (ev, playFunc) => {
     if (_.isEmpty(this.curSong)) { return; }
 
     const target = ev.target;
@@ -94,13 +94,15 @@ class FullPlayer extends React.Component {
     }
   }
 
-  handleTouchEnd = (ev) => {
+  handleTouchEnd = (ev, pauseFunc) => {
     console.log(ev.type);
     console.log(ev.changedTouches);
 
     const ProgressWrapElem = this.ProgressWrapRef.current;
     ProgressWrapElem.removeEventListener('touchmove', this.handleTouchMove);
     ProgressWrapElem.removeEventListener('touchend', this.handleTouchEnd);
+
+    pauseFunc()
   }
 
   // getLyric = () => {
@@ -314,7 +316,7 @@ class FullPlayer extends React.Component {
 
     return (
       <PlayerContext.Consumer>
-        {({ playerState, play, pause }) => {
+        {({ playerState, playByIndex, pause }) => {
           const {
             curSongIndex,
           } = playerState;
@@ -441,7 +443,7 @@ class FullPlayer extends React.Component {
                     }}
                     onAfterChange={(curVal) => {
                       afterChangeProgressHandler(curVal);
-                      play(curSongIndex);
+                      playByIndex(curSongIndex);
                     }}
                   /> */}
 

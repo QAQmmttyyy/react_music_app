@@ -18,7 +18,7 @@ class PlayingList extends React.Component {
     
     return (
       <PlayerContext.Consumer>
-        {({ playerState, play, deleteSong, clearPlaylist }) => {
+        {({ playerState, playByIndex, deleteSong, clearPlaylist }) => {
           const {
             playingList,
             curSongIndex,
@@ -53,7 +53,7 @@ class PlayingList extends React.Component {
                 key={id}
                 className={`${curSongIndex === idx ? 'active-song' : ''}`}
                 extra={extraCloseBtn}
-                onClick={() => play(idx)}
+                onClick={() => playByIndex(idx)}
               >
                 {name}
                 <span className="song-artists-alb">

@@ -32,8 +32,8 @@ class Player extends React.Component {
       showPlayingList: false,
     };
     this.audioRef = React.createRef();
-    this.handleChangeProgress = this.handleChangeProgress.bind(this);
-    this.handleAfterChangeProgress = this.handleAfterChangeProgress.bind(this);
+    // this.handleChangeProgress = this.handleChangeProgress.bind(this);
+    // this.handleAfterChangeProgress = this.handleAfterChangeProgress.bind(this);
 
     this.songId = 0; // lyric
     this.diffSong = false; // lyric
@@ -203,35 +203,35 @@ class Player extends React.Component {
     this.setState({ modeIndex: nextIndex });
   }
 
-  handleChangeProgress(value) {
-    if (this.isNoAudio()) {
-      return;
-    }
-    const
-      prevCurTime = this.state.curTime,
-      duration = this.audioRef.current.duration;
+  // handleChangeProgress(value) {
+  //   if (this.isNoAudio()) {
+  //     return;
+  //   }
+  //   const
+  //     prevCurTime = this.state.curTime,
+  //     duration = this.audioRef.current.duration;
 
-    const
-      curTimeStr = this.timeFormat(parseFloat((value / 100 * duration).toFixed(6))),
-      progress = `${value}%`;
+  //   const
+  //     curTimeStr = this.timeFormat(parseFloat((value / 100 * duration).toFixed(6))),
+  //     progress = `${value}%`;
 
-      if (prevCurTime !== curTimeStr) {
-        this.setState({
-          curTime: curTimeStr,
-          playProgress: progress,
-        });
-      } else {
-        this.setState({ playProgress: progress });
-      }
-  }
+  //     if (prevCurTime !== curTimeStr) {
+  //       this.setState({
+  //         curTime: curTimeStr,
+  //         playProgress: progress,
+  //       });
+  //     } else {
+  //       this.setState({ playProgress: progress });
+  //     }
+  // }
 
-  handleAfterChangeProgress(value) {
-    if (this.isNoAudio()) {
-      return;
-    }
-    const audio = this.audioRef.current;
-    audio.currentTime = parseFloat((value / 100 * audio.duration).toFixed(6));
-  }
+  // handleAfterChangeProgress(value) {
+  //   if (this.isNoAudio()) {
+  //     return;
+  //   }
+  //   const audio = this.audioRef.current;
+  //   audio.currentTime = parseFloat((value / 100 * audio.duration).toFixed(6));
+  // }
 
   toggleFullplayer = () => {
     this.setState(state => ({
@@ -255,6 +255,14 @@ class Player extends React.Component {
       curTime: '00:00'
     });
   }
+  // use by fullplayer
+  updateCurrentTime = (playPercentage) => {
+    const 
+      audioElem = this.audioRef.current,
+      duration = audioElem.duration;
+      
+    audioElem.currentTime = duration * playPercentage;
+  }
 
   handleTimeUpdate() {
     const
@@ -263,30 +271,31 @@ class Player extends React.Component {
     
     const
       nextCurTime = this.timeFormat(currentTime),
-      nextPlayProgress = `${(currentTime / duration * 100).toFixed(2)}%`,
+      nextPlayProgress = `${(currentTime / duration).toFixed(3)}`,
+      // nextPlayProgress = `${(currentTime / duration * 100).toFixed(2)}%`,
       nextCurLyricIndex = _.findLastIndex(timestampArr, val => val <= currentTime);
   
-      if (curTime !== nextCurTime) {
-        this.setState({
-          curTime: nextCurTime,
-          playProgress: nextPlayProgress,
-        });
-      } else if (currentTime === duration) {
-        this.setState({
-          playProgress: nextPlayProgress
-        });
-      }
-      // lyric
-      if (curLyricIndex !== nextCurLyricIndex) {
-        this.setState({
-          curLyricIndex: nextCurLyricIndex,
-          curLyricIndexChange: true,
-        });
-      } else {
-        this.setState({
-          curLyricIndexChange: false,
-        });
-      }
+    if (curTime !== nextCurTime) {
+      this.setState({
+        curTime: nextCurTime,
+        playProgress: nextPlayProgress,
+      });
+    } else if (currentTime === duration) {
+      this.setState({
+        playProgress: nextPlayProgress
+      });
+    }
+    // lyric
+    if (curLyricIndex !== nextCurLyricIndex) {
+      this.setState({
+        curLyricIndex: nextCurLyricIndex,
+        curLyricIndexChange: true,
+      });
+    } else {
+      this.setState({
+        curLyricIndexChange: false,
+      });
+    }
   }
 
   handleEnded(funcPlay) {
@@ -432,6 +441,7 @@ class Player extends React.Component {
                       afterChangeProgressHandler={this.handleAfterChangeProgress}
                       toggleFullplayer={this.toggleFullplayer}
                       togglePlayingList={(ev) => this.togglePlayingList(ev)}
+                      updateCurrentTime={this.updateCurrentTime}
                     />
                   );
                 }}

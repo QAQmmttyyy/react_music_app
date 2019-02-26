@@ -18,7 +18,7 @@ class FullPlayer extends React.Component {
       // timestampArr: [],
       showCover: true,
       showLyric: false,
-      progress: 0,
+      // progress: 0,
     };
     this.ScrollRef = React.createRef();
     this.ProgressWrapRef = React.createRef();
@@ -28,11 +28,16 @@ class FullPlayer extends React.Component {
     this.diffSong = true;
     this.curLyricIndex = -1;
     this.curLyricIndexChange = false;
+    this.isTouching = false;
+    this.progress = 0;
   }
 
-  // componentDidMount() {
-  //   this.getLyric();
-  // }
+  componentDidMount() {
+    // console.log('fullplayer mount');
+    const ProgressBarElem = this.ProgressBarRef.current;
+    this.progressBarWidth = ProgressBarElem.clientWidth;
+  }
+
   componentDidUpdate() {
     if (this.state.showLyric) {
       
@@ -45,64 +50,79 @@ class FullPlayer extends React.Component {
       }
     }
   }
-  handleTouchStart = (ev, playFunc) => {
+  handleTouchStart = (ev, fnPlay, fnPause) => {
     if (_.isEmpty(this.curSong)) { return; }
 
+    this.isTouching = true;
+
     const target = ev.target;
-    console.log(target);
-    console.log(ev.type);
-    console.log(ev.targetTouches);
+    // console.log(ev.type);
+    // console.log(ev.targetTouches);
 
     const ProgressBarElem = this.ProgressBarRef.current;
-    this.progressBarWidth = ProgressBarElem.clientWidth;
-    console.log('progressBarWidth', this.progressBarWidth);
+    // this.progressBarWidth = ProgressBarElem.clientWidth;
+    // console.log('progressBarWidth', this.progressBarWidth);
     this.progressBarOffsetLeft = ProgressBarElem.offsetLeft;
-    console.log('offsetLeft', this.progressBarOffsetLeft);
+    // console.log('offsetLeft', this.progressBarOffsetLeft);
     this.touchmoveLeftEdge = this.progressBarOffsetLeft - 8;
     this.touchmoveRightEdge = this.progressBarOffsetLeft + this.progressBarWidth + 8;
-    console.log(this.touchmoveLeftEdge, this.touchmoveRightEdge)
+    // console.log(this.touchmoveLeftEdge, this.touchmoveRightEdge);
 
     this.prevTouchX = ev.targetTouches[0].clientX;
-    console.log('prevTouchX', this.prevTouchX);
+    // console.log('prevTouchX', this.prevTouchX);
 
     const ProgressWrapElem = this.ProgressWrapRef.current;
     // console.log(ProgressWrapElem.offsetWidth);
+    this.handleTouchEnd = this.handleTouchEnd.bind(this, fnPlay);
     ProgressWrapElem.addEventListener('touchmove', this.handleTouchMove);
     ProgressWrapElem.addEventListener('touchend', this.handleTouchEnd);
+
+    fnPause();
   }
 
   handleTouchMove = (ev) => {
-    console.log(ev.type);
+    // console.log(ev.type);
     // console.log(ev.touches);
     const nextTouchX = ev.touches[0].clientX;
-    console.log('nextTouchX', nextTouchX);
+    // console.log('nextTouchX', nextTouchX);
 
     if (this.touchmoveLeftEdge < nextTouchX && nextTouchX < this.touchmoveRightEdge) {
       const deltaX = nextTouchX - this.prevTouchX;
       this.prevTouchX = nextTouchX;
-      console.log(deltaX);
+      // console.log(deltaX);
+      let nextProgress = this.progress + deltaX;
+      if (nextProgress < 0) {
+        nextProgress = 0;
+      } else if (nextProgress > this.progressBarWidth) {
+        nextProgress = this.progressBarWidth;
+      }
+      this.progress = nextProgress;
 
-      this.setState(prevState => {
-        let nextProgress = prevState.progress + deltaX;
-        if (nextProgress < 0) {
-          nextProgress = 0;
-        } else if (nextProgress > this.progressBarWidth) {
-          nextProgress = this.progressBarWidth;
-        }
-        return { progress: nextProgress };
-      });
+      this.props.updateCurrentTime((nextProgress / this.progressBarWidth));
+
+      // this.setState(prevState => {
+      //   let nextProgress = prevState.progress + deltaX;
+      //   if (nextProgress < 0) {
+      //     nextProgress = 0;
+      //   } else if (nextProgress > this.progressBarWidth) {
+      //     nextProgress = this.progressBarWidth;
+      //   }
+      //   return { progress: nextProgress };
+      // }, () => {this.props.updateCurrentTime((this.state.progress / this.progressBarWidth))});
+
     }
   }
 
-  handleTouchEnd = (ev, pauseFunc) => {
-    console.log(ev.type);
-    console.log(ev.changedTouches);
+  handleTouchEnd(fnPlay, ev) {
+    // console.log(ev.type);
+    // console.log(ev.changedTouches);
+    this.isTouching = false;
 
     const ProgressWrapElem = this.ProgressWrapRef.current;
     ProgressWrapElem.removeEventListener('touchmove', this.handleTouchMove);
     ProgressWrapElem.removeEventListener('touchend', this.handleTouchEnd);
 
-    pauseFunc()
+    fnPlay();
   }
 
   // getLyric = () => {
@@ -182,6 +202,7 @@ class FullPlayer extends React.Component {
   }
 
   render() {
+    // console.log('fullplayer render');
     let {
       transitionClass,
       curSong,
@@ -192,8 +213,8 @@ class FullPlayer extends React.Component {
       clickPrevBtnHandler,
       clickNextBtnHandler,
       clickModeBtnHandler,
-      changeProgressHandler,
-      afterChangeProgressHandler,
+      // changeProgressHandler,
+      // afterChangeProgressHandler,
       toggleFullplayer,
       togglePlayingList,
     } = this.props;
@@ -203,7 +224,7 @@ class FullPlayer extends React.Component {
       // timestampArr,
       showCover,
       showLyric,
-      progress,
+      // progress,
     } = this.state;
 
     this.curSong = curSong;
@@ -314,12 +335,13 @@ class FullPlayer extends React.Component {
       imgSrc = CoverPlaceholder;
     }
 
+    // playprogress
+    const playProgressWidth = this.progressBarWidth * parseFloat(playProgress);
+    this.progress = playProgressWidth;
+
     return (
       <PlayerContext.Consumer>
-        {({ playerState, playByIndex, pause }) => {
-          const {
-            curSongIndex,
-          } = playerState;
+        {({ play, pause }) => {
 
           return (
             <div className={`fullplayer ${transitionClass}`}>
@@ -400,12 +422,14 @@ class FullPlayer extends React.Component {
                       <div className="bar-inner">
                         <div
                           className="progress"
-                          style={{width: `${progress}px`}}
+                          style={{width: `${this.isTouching ? this.progress:playProgressWidth}px`}}
+                          // style={{width: `${playProgressWidth}px`}}
                         ></div>
                         <div
                           className="progress-btn-wrapper"
-                          style={{transform: `translate3d(${progress}px, 0px, 0px)`}}
-                          onTouchStart={(ev) => this.handleTouchStart(ev)}
+                          style={{transform: `translate3d(${this.isTouching ? this.progress:playProgressWidth}px, 0px, 0px)`}}
+                          // style={{transform: `translate3d(${playProgressWidth}px, 0px, 0px)`}}
+                          onTouchStart={(ev) => this.handleTouchStart(ev, play, pause)}
                         >
                           <div className="progress-btn"></div>
                         </div>

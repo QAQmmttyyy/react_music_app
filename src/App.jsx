@@ -18,7 +18,7 @@ class App extends React.Component {
     };
     // bind this to method
     this.playByIndex = this.playByIndex.bind(this);
-    this.pause = this.pause.bind(this);
+    // this.pause = this.pause.bind(this);
     this.deleteSong = this.deleteSong.bind(this);
     this.clearPlaylist = this.clearPlaylist.bind(this);
     this.playAll = this.playAll.bind(this);
@@ -54,7 +54,10 @@ class App extends React.Component {
     }
   }
 
-  pause() {
+  play = () => {
+    this.setState({ isPause: false });
+  }
+  pause = () => {
     this.setState({ isPause: true });
   }
 
@@ -237,6 +240,7 @@ class App extends React.Component {
           value={{
             playerState: this.state,
             playByIndex: this.playByIndex,
+            play: this.play,
             pause: this.pause,
             deleteSong: this.deleteSong,
             clearPlaylist: this.clearPlaylist,

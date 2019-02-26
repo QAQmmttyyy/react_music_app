@@ -39,7 +39,7 @@ class FullPlayer extends React.Component {
   }
 
   componentDidUpdate() {
-    if (this.state.showLyric) {
+    if (this.state.showLyric && this.lyric.length) {
       
       if (this.diffSong) {
         this.ScrollRef.current.scrollToElement('p.sentence',1000,false,true);
@@ -275,6 +275,7 @@ class FullPlayer extends React.Component {
     this.diffSong = diffSong;
     this.curLyricIndex = curLyricIndex;
     this.curLyricIndexChange = curLyricIndexChange;
+    this.lyric = lyric;
 
     const navBarTitleCnt = (
       <div className="navbar-title-content">

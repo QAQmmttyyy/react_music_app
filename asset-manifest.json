@@ -1,7 +1,7 @@
 {
   "main.css": "/react_music_app/static/css/main.69bcb4cd.chunk.css",
-  "main.js": "/react_music_app/static/js/main.5ecac90f.chunk.js",
-  "main.js.map": "/react_music_app/static/js/main.5ecac90f.chunk.js.map",
+  "main.js": "/react_music_app/static/js/main.43b525ab.chunk.js",
+  "main.js.map": "/react_music_app/static/js/main.43b525ab.chunk.js.map",
   "static/css/1.277b9f95.chunk.css": "/react_music_app/static/css/1.277b9f95.chunk.css",
   "static/js/1.7d19d952.chunk.js": "/react_music_app/static/js/1.7d19d952.chunk.js",
   "static/js/1.7d19d952.chunk.js.map": "/react_music_app/static/js/1.7d19d952.chunk.js.map",
@@ -13,6 +13,6 @@
   "static/media/loading-64.svg": "/react_music_app/static/media/loading-64.0ad8b01c.svg",
   "static/css/1.277b9f95.chunk.css.map": "/react_music_app/static/css/1.277b9f95.chunk.css.map",
   "index.html": "/react_music_app/index.html",
-  "precache-manifest.c066e4368f4be86b045f7c19fd3301d5.js": "/react_music_app/precache-manifest.c066e4368f4be86b045f7c19fd3301d5.js",
+  "precache-manifest.c65134a8d3909b94f8cba2d3954dd0e6.js": "/react_music_app/precache-manifest.c65134a8d3909b94f8cba2d3954dd0e6.js",
   "service-worker.js": "/react_music_app/service-worker.js"
 }

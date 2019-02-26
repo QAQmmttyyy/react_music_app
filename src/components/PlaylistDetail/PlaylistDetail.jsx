@@ -119,6 +119,9 @@ class PlaylistDetail extends React.Component {
     return (
       <PlayerContext.Consumer>
         {({ playerState, playAll, playSong }) => {
+          const { currentSong } = playerState;
+          {/* const matchedSongIdx = _.findIndex(songlist, ['id', currentSong.id]); */}
+          const curSongId = currentSong.id;
 
           const listContent = songlist.length && songlist.map((song, idx) => {
             const {
@@ -133,7 +136,7 @@ class PlaylistDetail extends React.Component {
             return (
               <Item 
                 key={id}
-                className="mty-list-item"
+                className={`mty-list-item ${id === curSongId ? 'playing':''}`}
                 activeStyle={{
                   backgroundColor: '#ccc'
                 }}

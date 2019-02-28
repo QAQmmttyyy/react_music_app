@@ -34,7 +34,6 @@ class Search extends Component {
 
   submit = (value) => {
     if (value) {
-      
       // set loading
       this.setState({
         showSearchKeywordBox: false,
@@ -176,7 +175,7 @@ class Search extends Component {
 
     return (
       <PlayerContext.Consumer>
-        {({ playSong }) => {
+        {({ playerState, playSong }) => {
           let resultContent;
           if (searchResult && searchResult.length) {
             resultContent = searchResult.map((song, idx) => {
@@ -199,7 +198,7 @@ class Search extends Component {
       
           } else {
             resultContent = (
-              <div style={{height:'100vh',textAlign: 'center'}}>网络出了点问题</div>
+              <div style={{height:'calc(100vh - 100px)',textAlign: 'center'}}>网络出了点问题</div>
             );
           }
 
@@ -219,7 +218,10 @@ class Search extends Component {
               />
               
               {showSearchBox ? (
-                <div className="search-box">
+                <div
+                  className="search-box"
+                  style={playerState.playingList.length ? {bottom: '56px'} : {bottom: '0'}}
+                >
                   {/* hot history */}
                   <Transition
                     in={showSearchKeywordBox}
@@ -293,22 +295,6 @@ class Search extends Component {
                       );
                     }}
                   </Transition>
-                  {/* loading */}
-                  {/* <Transition
-                    in={isLoading}
-                    timeout={150}
-                    mountOnEnter
-                    unmountOnExit
-                    onExited={() => this.setState({isLoading: false})}
-                  >
-                    {(status) => {
-                      return (
-                        <div className={`search-loading-box fade fade-${status}`}>
-                          <Loading />
-                        </div>
-                      );
-                    }}
-                  </Transition> */}
                 </div>
               ) : null}
 

@@ -16,23 +16,23 @@ self.__precacheManifest = [
     "url": "/react_music_app/static/js/runtime~main.58535fe6.js"
   },
   {
-    "revision": "0e17f86225a289710977",
-    "url": "/react_music_app/static/js/main.0e17f862.chunk.js"
+    "revision": "627118fe6c229b3fe4e1",
+    "url": "/react_music_app/static/js/main.627118fe.chunk.js"
   },
   {
     "revision": "7d19d9523ab5564d0607",
     "url": "/react_music_app/static/js/1.7d19d952.chunk.js"
   },
   {
-    "revision": "0e17f86225a289710977",
-    "url": "/react_music_app/static/css/main.690acfdf.chunk.css"
+    "revision": "627118fe6c229b3fe4e1",
+    "url": "/react_music_app/static/css/main.2a9627db.chunk.css"
   },
   {
     "revision": "7d19d9523ab5564d0607",
     "url": "/react_music_app/static/css/1.277b9f95.chunk.css"
   },
   {
-    "revision": "2e8fe1ea6b97746d40e26b662d2f04dd",
+    "revision": "9fd58e3aea4b1ff00a616bd0e92fe276",
     "url": "/react_music_app/index.html"
   }
 ];

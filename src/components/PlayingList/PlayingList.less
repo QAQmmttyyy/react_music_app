@@ -90,7 +90,7 @@
   transition: all 250ms cubic-bezier(0, 0.84, 0.36, 1);
 
   &-entering {
-    transform: translateY(70vh);
+    transform: translateY(0vh);
   }
   &-entered {
     transform: translateY(0vh);
@@ -100,5 +100,34 @@
   }
   &-exited {
     transform: translateY(70vh);
+  }
+}
+
+.playing-list-back-mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 198;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(37,38,45,.6);
+
+  &.fade {
+    opacity: 0;
+    transition: all 100ms ease;
+  
+    &-entering {
+      opacity: 1;
+    }
+    &-entered {
+      opacity: 1;
+    }
+    &-exiting {
+      opacity: 0;
+    }
+    &-exited {
+      opacity: 0;
+    }
   }
 }

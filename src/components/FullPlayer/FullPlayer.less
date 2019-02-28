@@ -251,11 +251,11 @@
   }
 
   .fade {
-    // opacity: 0;
+    opacity: 0;
     transition: all 100ms ease;
   
     &-entering {
-      opacity: 0;
+      opacity: 1;
     }
     &-entered {
       opacity: 1;
@@ -274,7 +274,7 @@
   transition: all 250ms cubic-bezier(0, 0.84, 0.36, 1);
 
   &-entering {
-    transform: translateY(100vh);
+    transform: translateY(0vh);
   }
   &-entered {
     transform: translateY(0vh);

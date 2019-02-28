@@ -149,7 +149,7 @@ class PlaylistDetail extends React.Component {
                       {name}
                     </div>
                     <div className="s-artists-alb f-thide">
-                      {artistsTitle} - {album.name}
+                      {artistsTitle}
                     </div>
                   </div>
                 </div>
@@ -230,7 +230,6 @@ class PlaylistDetail extends React.Component {
                         <div className="loading-box"><Loading /></div>
                       ) : (
                         <div className="result-box"><Result title="网络开小差了" /></div>
-                        
                       )
                     )}
                   </List>

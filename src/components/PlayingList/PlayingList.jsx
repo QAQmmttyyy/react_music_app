@@ -14,7 +14,7 @@ class PlayingList extends React.Component {
   }
   
   render() {
-    const { transitionClass, togglePlayingList } = this.props;
+    const { maskFadeClass, transitionClass, togglePlayingList } = this.props;
     
     return (
       <PlayerContext.Consumer>
@@ -64,29 +64,31 @@ class PlayingList extends React.Component {
           });
 
           return (
-            <div 
-              className={`playing-list ${transitionClass}`}
-              onTouchStart={(ev) => ev.stopPropagation()}
-            >
-              <Item
-                extra={extraClearBtn}
-                multipleLine
+            <div className={`playing-list-back-mask ${maskFadeClass}`}>
+              <div 
+                className={`playing-list ${transitionClass}`}
+                onTouchStart={(ev) => ev.stopPropagation()}
               >
-                播放列表
-                <span className="song-num">
-                  共({playingList.length})首
-                </span>
-              </Item>
-              <List>
-                {listItemArr}
-              </List>
-              <Item
-                className="close-btn"
-                onClick={togglePlayingList}
-                multipleLine
-              >
-                关闭
-              </Item>
+                <Item
+                  extra={extraClearBtn}
+                  multipleLine
+                >
+                  播放列表
+                  <span className="song-num">
+                    共({playingList.length})首
+                  </span>
+                </Item>
+                <List>
+                  {listItemArr}
+                </List>
+                <Item
+                  className="close-btn"
+                  onClick={togglePlayingList}
+                  multipleLine
+                >
+                  关闭
+                </Item>
+              </div>
             </div>
           );
         }}

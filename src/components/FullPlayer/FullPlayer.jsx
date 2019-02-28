@@ -125,69 +125,6 @@ class FullPlayer extends React.Component {
     fnPlay();
   }
 
-  // getLyric = () => {
-  //   const lrcUrl = `https://api.mlwei.com/music/api/wy/?key=523077333&cache=1&type=lrc&id=${this.songId}`;
-  //   // console.log(lrcUrl);
-    
-  //   window.fetch(lrcUrl, {
-  //     method: 'GET',
-  //     headers: { 'Accept': '*' },
-  //     mode: 'cors'
-  //   }).then(
-  //     response => {
-  //       console.log(response);
-  //       return response.status === 200 ? response.text() : null;
-  //     }
-  //   ).then(
-  //     data => {
-  //       if (data) {
-          
-  //         // console.log(data);
-  //         const lrcArr = data.split('\n');
-  //         // state
-  //         const 
-  //           lyric = [],
-  //           timestampArr = [];
-  
-  //         lrcArr.forEach((lrc) => {
-  //           const matchPart = lrc.match(/\[(.*)\](.*)/);
-  
-  //           if (matchPart) {
-              
-  //             const 
-  //               timestampParts = matchPart[1].trim().split(':'),
-  //               part1 = parseInt(timestampParts[0]) * 60,
-  //               part2 = parseFloat(timestampParts[1]),
-  //               timestamp = part1 + part2;
-              
-  //             if (!isNaN(timestamp)) {
-  //               lyric.push(matchPart[2].trim());
-  //               timestampArr.push(timestamp);
-  //             }
-  //           }
-  //         });
-  
-  //         console.log(lyric);
-  //         console.log(timestampArr);
-  
-  //         this.setState({
-  //           lyric: lyric,
-  //           timestampArr: timestampArr,
-  //           curLyricIndex: 0,
-  //         });
-  //       }
-  //     }
-  //   ).catch(
-  //     reason => {
-  //       console.log(reason);
-  //       this.setState({
-  //         lyric: [],
-  //         timestampArr: [],
-  //       });
-  //     }
-  //   );
-  // }
-
   handleClickLyric = () => {
     this.setState({
       showCover: true,
@@ -213,15 +150,11 @@ class FullPlayer extends React.Component {
       clickPrevBtnHandler,
       clickNextBtnHandler,
       clickModeBtnHandler,
-      // changeProgressHandler,
-      // afterChangeProgressHandler,
       toggleFullplayer,
       togglePlayingList,
     } = this.props;
 
     const {
-      // lyric,
-      // timestampArr,
       showCover,
       showLyric,
       // progress,
@@ -437,40 +370,6 @@ class FullPlayer extends React.Component {
                       </div>
                     </div>
                   </div>
-                  {/* <Slider
-                    style={{
-                      marginLeft: 12,
-                      marginRight: 12,
-                      paddingTop: 22,
-                      paddingBottom: 24,
-                    }}
-                    defaultValue={0}
-                    min={0}
-                    max={100}
-                    step={0.1}
-                    value={progress}
-                    handleStyle={{
-                      marginLeft: '-8px',
-                      marginTop: '-7px',
-                      width: '16px',
-                      height: '16px',
-                      border: 'none',
-                    }}
-                    trackStyle={{
-                      backgroundColor: '#31c27c'
-                    }}
-                    railStyle={{
-                      backgroundColor: 'rgba(225,225,225, 0.4)'
-                    }}
-                    onChange={(value) => {
-                      pause();
-                      changeProgressHandler(value);
-                    }}
-                    onAfterChange={(curVal) => {
-                      afterChangeProgressHandler(curVal);
-                      playByIndex(curSongIndex);
-                    }}
-                  /> */}
 
                   <p className="time time-dur">{duration}</p>
                 </div>

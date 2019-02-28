@@ -87,7 +87,7 @@ class Player extends React.Component {
 
   getLyric = () => {
     const lrcUrl = `https://api.mlwei.com/music/api/wy/?key=523077333&cache=1&type=lrc&id=${this.songId}`;
-    console.log(lrcUrl);
+    // console.log(lrcUrl);
     
     window.fetch(lrcUrl, {
       method: 'GET',
@@ -100,14 +100,14 @@ class Player extends React.Component {
       }
     ).then(
       data => {
+        const 
+          lyric = [],
+          timestampArr = [];
+
         if (data) {
-          
           // console.log(data);
           const lrcArr = data.split('\n');
           // state
-          const 
-            lyric = [],
-            timestampArr = [];
   
           lrcArr.forEach((lrc) => {
             const matchPart = lrc.match(/\[(.*)\](.*)/);
@@ -127,15 +127,15 @@ class Player extends React.Component {
             }
           });
   
-          console.log(lyric);
+          // console.log(lyric);
           // console.log(timestampArr);
-  
-          this.setState({
-            lyric: lyric,
-            timestampArr: timestampArr,
-            curLyricIndex: -1,
-          });
         }
+
+        this.setState({
+          lyric: lyric,
+          timestampArr: timestampArr,
+          curLyricIndex: -1,
+        });
       }
     ).catch(
       reason => {
@@ -202,36 +202,6 @@ class Player extends React.Component {
     this.audioRef.current.loop = nextIndex === 1;
     this.setState({ modeIndex: nextIndex });
   }
-
-  // handleChangeProgress(value) {
-  //   if (this.isNoAudio()) {
-  //     return;
-  //   }
-  //   const
-  //     prevCurTime = this.state.curTime,
-  //     duration = this.audioRef.current.duration;
-
-  //   const
-  //     curTimeStr = this.timeFormat(parseFloat((value / 100 * duration).toFixed(6))),
-  //     progress = `${value}%`;
-
-  //     if (prevCurTime !== curTimeStr) {
-  //       this.setState({
-  //         curTime: curTimeStr,
-  //         playProgress: progress,
-  //       });
-  //     } else {
-  //       this.setState({ playProgress: progress });
-  //     }
-  // }
-
-  // handleAfterChangeProgress(value) {
-  //   if (this.isNoAudio()) {
-  //     return;
-  //   }
-  //   const audio = this.audioRef.current;
-  //   audio.currentTime = parseFloat((value / 100 * audio.duration).toFixed(6));
-  // }
 
   toggleFullplayer = () => {
     this.setState(state => ({
@@ -306,7 +276,7 @@ class Player extends React.Component {
 
   handleAudioError() {
     const audioElem = this.audioRef.current;
-    console.log(audioElem.error);
+    // console.log(audioElem.error);
     
     // TODO 完善无版权歌曲处理
     if (audioElem.error.code === 2) {
@@ -458,6 +428,7 @@ class Player extends React.Component {
                 {(status) => {
                   return (
                     <PlayingList
+                      maskFadeClass={`fade fade-${status}`}
                       transitionClass={`slide-up slide-up-${status}`}
                       listData={playingList}
                       curSongIndex={curSongIndex}

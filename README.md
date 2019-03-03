@@ -1,44 +1,33 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 移动端音乐Web APP 👉 [点击体验](https://qaqmmttyyy.github.io/react_music_app/)
+(PS：在浏览器开发工具移动设备模式下效果更佳，F12你懂的~)
 
-## Available Scripts
+![musicapp.png](https://i.loli.net/2019/03/02/5c7a6ecdbd69c.png)
 
-In the project directory, you can run:
 
-### `npm start`
+## 技术栈
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**基础**：HTML5/CSS3/JavaScript(ES6)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+**前端框架**：React.js (版本16.x)
 
-### `npm test`
+**前端路由**：React Router (版本4.x) (上线的版本取消了路由，源码对应norouter分支)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**数据共享**：React 自带的 Context
 
-### `npm run build`
+**服务端通讯**：Fetch API
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**CSS预处理**：Less
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+**移动端滚动库**：better-scroll (实现轮播图、歌词滚动)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**过渡动画**：React Transition Group
 
-### `npm run eject`
+**构建工具**：Webpack
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**其他**：
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- HTML5 audio及相关媒体API，用于歌曲播放控制及媒体信息展示。
+- Storage API 的 localStorage，用于播放模式、当前歌曲、播放列表的记录。
+- Touch events，用于进度条交互实现。
+- 使用Flex布局以及百分比尺寸方案进行移动设备屏幕适配。
+- 接口服务数据有两部分：静态资源文件(提供歌单列表数据，爬自网易云音乐)、名流互联API(其中的网易云音乐数据API) [链接](https://api.mlwei.com/)。**由此本项目未创建后端部分**。

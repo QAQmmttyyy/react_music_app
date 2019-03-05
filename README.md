@@ -18,7 +18,7 @@
 
 **前端框架**：React.js (版本16.x)
 
-**前端路由**：React Router (版本4.x) (上线的版本取消了路由，源码对应norouter分支)
+**前端路由**：React Router (版本4.x)
 
 **数据共享**：React 自带的 Context
 

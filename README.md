@@ -1,11 +1,12 @@
 # 移动端音乐Web App
 
 ## 在线体验
-使用浏览器请[点击体验](https://qaqmmttyyy.github.io/react_music_app/)(PS：在浏览器开发工具移动设备模式下效果更佳，F12你懂的~)
 
-微信扫码体验
+微信扫码体验（推荐！）
 
 ![1551713364.png](https://i.loli.net/2019/03/04/5c7d44f9463ad.png)
+
+使用浏览器请[点击体验](https://qaqmmttyyy.github.io/react_music_app/)(PS：F12你懂的~)
 
 ## 预览图
 ![musicapp.png](https://i.loli.net/2019/03/02/5c7a6ecdbd69c.png)

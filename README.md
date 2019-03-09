@@ -2,9 +2,11 @@
 
 ## 在线体验
 
+（PS：网址打开后，点击访问原网页）
+
 [点击体验](https://qaqmmttyyy.github.io/react_music_app/)
 
-微信扫码体验（扫码后点击 访问原网页）
+微信扫码体验
 
 ![1551713364.png](https://i.loli.net/2019/03/04/5c7d44f9463ad.png)
 
